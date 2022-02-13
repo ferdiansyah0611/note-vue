@@ -1,0 +1,66 @@
+@tailwind base
+@tailwind components
+@tailwind utilities
+
+@layer components
+	.btn
+		@apply p-2 font-bold text-sm
+	.btn.primary
+		@apply bg-blue-700
+	.btn.secondary
+		@apply bg-red-700
+
+body
+	// background: linear-gradient(51deg, #03003e, #000e71d4)
+	background-color: black
+	background-attachment: fixed
+	color: white
+
+input, textarea
+	background-color: #343434 !important
+	&::placeholder
+		@apply text-gray-400
+
+
+.containers
+	@apply px-4 md:px-28 pb-10
+
+.navbar
+	@apply w-full flex sticky top-0
+	background: #0000002b
+	border-bottom: 0.3px solid #ffffff73
+	backdrop-filter: blur(16px) saturate(160%)
+	h5, a
+		@apply p-6
+	.one
+		@apply flex-1
+	.two
+		@apply flex
+
+.form-label
+	@apply flex
+	flex-direction: column
+
+.list-note
+	@apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2
+	.item
+		background-color: #262626
+		&:hover
+			.footer
+				@apply flex
+			.date
+				@apply hidden
+		h5
+			@apply font-bold
+		h5, p
+			@apply p-2
+			overflow-wrap: anywhere
+		.date
+			@apply text-gray-400 text-sm
+		.footer
+			@apply hidden
+			> *
+				@apply flex-1
+
+.borderless
+	@apply border-gray-600 border-t px-2
